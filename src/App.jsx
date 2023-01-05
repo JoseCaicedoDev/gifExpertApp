@@ -10,7 +10,7 @@ export const App = () => {
   const onAddCategory = (newCategory) => {
     if (categories.includes(newCategory.toLowerCase())) return;
 
-    setCategories([...categories, newCategory])
+    setCategories([newCategory, ...categories])
   }
   return (
     <>
@@ -21,8 +21,6 @@ export const App = () => {
       <AddCategory onNewCategory={onAddCategory} />
 
       {/* Listado de Gif */}
-      <GifGrid />
-
       {categories.map(category =>
         <GifGrid key={category}
           category={category} />
